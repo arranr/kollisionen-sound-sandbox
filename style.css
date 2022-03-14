@@ -1,0 +1,618 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;700;900&display=swap");
+
+body {
+  background-color: #fdf5e6;
+  font-family: "Inconsolata", monospace;
+}
+
+:root {
+  --cinema: #002fa7;
+  --biography: #fdd55c;
+  --writing: #ed563b;
+  --graphic: #3caea3;
+  --apartment: #922598;
+  --cinewrit: #774371;
+  --cinebio: #8a9a5b;
+  --biowrit: #f5964c;
+  --allcat: #000000;
+}
+
+.m-top-2 {
+  margin-top: 8px;
+}
+.m-top-3 {
+  margin-top: 12px;
+}
+
+/* .axis path {
+  fill: none;
+  stroke: #999;
+  stroke-dasharray: 2 3;
+}
+.axis text {
+  font-size: 13px;
+  stroke: #222;
+} */
+/* text.title {
+  font-size: 24px;
+}
+circle.tick {
+  fill: #f3f3f3;
+  stroke: #999;
+  stroke-dasharray: 2 3;
+} */
+
+path.backgroundspiral {
+  fill: none;
+  stroke: #ee8d18;
+  stroke-width: 3px;
+}
+
+.tooltip {
+  background: white;
+  border-radius: 4px;
+  width: 180px;
+  box-shadow: 0 0 1px #999999;
+  color: #333;
+  font-size: 12px;
+  left: 130px;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  top: 95px;
+  z-index: 10;
+  display: inline-block;
+}
+
+.tooltip-date {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.tooltip-title {
+  font-weight: 400;
+  font-size: 12;
+}
+
+.sidebar {
+  background-color: rgba(255, 255, 255, 0.5);
+  outline: 1px solid grey;
+  margin: 0px;
+  font-size: 0.9em;
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  display: none;
+  text-align: left;
+  padding: 40px;
+  padding-top: 50px;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+}
+
+.title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.date {
+  font-weight: bold;
+}
+
+h3 {
+  margin-top: 15px;
+}
+
+.key-dot {
+  display: inline-block;
+  height: 10px;
+  margin-right: 0.5em;
+  width: 10px;
+}
+
+.legend {
+  margin-right: 20px;
+}
+
+.cinema {
+  background: var(--cinema);
+}
+path.cinema {
+  stroke: var(--cinema);
+  /* fill: var(--cinema); */
+}
+circle.cinema {
+  fill: var(--cinema);
+}
+line.cinema {
+  stroke: var(--cinema);
+}
+.biography {
+  background: var(--biography);
+}
+path.biography {
+  stroke: var(--biography);
+  /* fill: var(--biography); */
+}
+circle.biography {
+  fill: var(--biography);
+}
+line.biography {
+  stroke: var(--biography);
+}
+.writing {
+  background: var(--writing);
+}
+path.writing {
+  stroke: var(--writing);
+  /* fill: var(--writing); */
+}
+circle.writing {
+  fill: var(--writing);
+}
+line.writing {
+  stroke: var(--writing);
+}
+/* .graphic {
+  background: var(--graphic);
+}
+path.graphic {
+  stroke: var(--graphic);
+}
+circle.graphic {
+  fill: var(--graphic);
+}
+line.graphic {
+  stroke: var(--graphic);
+}
+.apartment {
+  background: var(--apartment);
+}
+path.apartment {
+  stroke: var(--apartment);
+}
+circle.apartment {
+  fill: var(--apartment);
+}
+line.apartment {
+  stroke: var(--apartment);
+} */
+.cinewrit {
+  background: var(--cinewrit);
+}
+path.cinewrit {
+  stroke: var(--cinewrit);
+  /* fill: var(--cinewrit); */
+}
+circle.cinewrit {
+  fill: var(--cinewrit);
+}
+line.cinewrit {
+  stroke: var(--cinewrit);
+}
+.cinebio {
+  background: var(--cinebio);
+}
+path.cinebio {
+  stroke: var(--cinebio);
+  /* fill: var(--cinebio); */
+}
+circle.cinebio {
+  fill: var(--cinebio);
+}
+line.cinebio {
+  stroke: var(--cinebio);
+}
+.biowrit {
+  background: var(--biowrit);
+}
+path.biowrit {
+  stroke: var(--biowrit);
+  /* fill: var(--biowrit); */
+}
+circle.biowrit {
+  fill: var(--biowrit);
+}
+line.biowrit {
+  stroke: var(--biowrit);
+}
+.allcat {
+  background: var(--allcat);
+}
+path.allcat {
+  stroke: var(--allcat);
+  /* fill: var(--allcat); */
+}
+circle.allcat {
+  fill: var(--allcat);
+}
+line.allcat {
+  stroke: var(--allcat);
+}
+
+.line {
+  stroke-width: 1.5px;
+  /* fill: none; */
+}
+
+.spiralArcs {
+  stroke-width: 2;
+  fill: none;
+}
+
+/* .key-dot {
+display: inline-block;
+height: 10px;
+margin-right: .5em;
+width: 10px;
+} */
+
+.key-dot {
+  border-radius: 50%;
+}
+
+#left-panel {
+  left: 10px;
+  top: 10px;
+  position: fixed;
+  z-index: 20;
+  width: 320px;
+  padding-left: 15px;
+  padding-top: 15px;
+  height: 100%;
+}
+
+.left-panel {
+  left: 25px;
+  z-index: 20;
+}
+
+p {
+  margin: 5;
+  margin-left: 0px;
+}
+
+h2 {
+  font-size: 1em;
+}
+
+.intro-text {
+  text-align: left;
+  float: left;
+  padding-top: 10px;
+  font-size: 12pt;
+}
+
+.logo {
+  padding-bottom: 5px;
+}
+
+.search-container {
+  float: left;
+  margin-top: 15px;
+  z-index: 3;
+  display: block;
+}
+
+.searchiconbg {
+  background-color: lightgray;
+  height: 24px;
+  margin-top: 10px;
+  margin-left: 13px;
+}
+
+#search-icon {
+  position: relative;
+  margin-top: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: black;
+}
+
+.search {
+  position: relative;
+  width: 250px;
+  margin-left: 0px;
+  margin-top: 20px;
+  border: 0;
+  color: black;
+  font-size: 12pt;
+}
+
+.highlights {
+  float: left;
+  padding-top: 10px;
+}
+
+.categories {
+  float: left;
+  width: 400px;
+}
+
+.entities {
+  float: left;
+  width: 300px;
+}
+
+#legend1 {
+  float: left;
+  z-index: 10;
+  font-size: 1em;
+}
+
+/* #legend1 h2 {
+  font-size: 1em;
+  text-align: left;
+  margin-bottom: 0;
+} */
+
+/* #legend1 p {
+  font-size: 1em; 
+  text-align: left;
+  margin: 0.5em;
+} */
+
+.filter {
+  cursor: pointer;
+}
+
+.highlights p {
+  cursor: pointer;
+}
+
+.entities {
+  float: left;
+}
+
+.entities p {
+  cursor: pointer;
+}
+
+.entities img {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+#closedsidebar {
+  position: fixed;
+  right: 10px;
+  top: 0;
+  font-size: 30;
+  color: black;
+  cursor: pointer;
+  z-index: 30;
+  margin: 5px;
+}
+
+.toppanel {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  clear: both;
+  width: 100%;
+  height: 60px;
+  /* height: 100%; */
+  margin-top: 30px;
+  z-index: 5;
+}
+
+.toppanel a {
+  color: black;
+}
+
+.spiralviz {
+  float: left;
+  padding-top: 30px;
+  padding-right: 70px;
+}
+
+.networkviz {
+  float: left;
+  padding-top: 30px;
+}
+
+.timelinesviz {
+  float: left;
+  padding-top: 30px;
+  padding-left: 70px;
+}
+
+.modalbuttons {
+  display: flex;
+  float: left;
+  bottom: 50px;
+  position: absolute;
+}
+
+.modalbuttons img {
+  padding: 4px;
+}
+
+.sorting {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  top: 100px;
+  position: relative;
+  z-index: 5;
+}
+
+/* .spiralviz {
+  width: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+} */
+
+/* .timeline-sorting {
+
+} */
+
+/* .alphabetical {
+  float: left;
+  padding-top: 30px;
+  padding-right: 70px;
+}
+
+.temporal {
+  float: left;
+  padding-top: 30px;
+}
+
+.frequency {
+  float: left;
+  padding-top: 30px;
+  padding-left: 70px;
+} */
+
+#chart {
+  position: fixed;
+  left: 0;
+  top: 50;
+  height: 100%;
+  width: 100%;
+  cursor: move;
+  z-index: 0;
+  display: flex;
+}
+
+.circles {
+  cursor: pointer;
+}
+
+.pathGs {
+  cursor: pointer;
+}
+
+.timelineLines {
+  cursor: pointer;
+}
+
+#soundheadline {
+  margin-top: 1em;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  margin-top: 0.25em;
+  width: 30px;
+  height: 18px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 2px;
+  top: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px black;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+/*
+        * === SEARCH BOX===
+        */
+/* .searchiconbg {
+  background-color: lightgrey;
+  height: 24px;
+  margin-top: 0px;
+  margin-left: 13px;
+}
+
+#search-icon {
+  position: relative;
+  margin-top: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #474747;
+}
+
+.search {
+  position: relative;
+  width: 300px;
+  font-size: 1em;
+  margin-left: 0px;
+  margin-top: 20px;
+  border: 0;
+}
+.search-container {
+  margin-top: 0;
+  z-index: 3;
+  display: block;
+  position: fixed;
+  top: 10;
+  left: calc(50% - 150px);
+} */
+
+.filteredout {
+  display: none;
+}
+
+#eventList {
+  right: 0;
+  top: 0;
+  width: 350px;
+  height: 100%;
+  position: fixed;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 200;
+  padding: 20px;
+  outline: 1px solid grey;
+  overflow-y: auto;
+}
+
+:root {
+  --cinema: #002fa7;
+  --biography: #fdd55c;
+  --writing: #ed563b;
+  --graphic: #3caea3;
+  --apartment: #922598;
+  --cinewrit: #774371;
+  --cinebio: #8a9a5b;
+  --biowrit: #f5964c;
+  --allcat: #000000;
+}
+
+/*
+          * === SEARCH BOX===
+          */
